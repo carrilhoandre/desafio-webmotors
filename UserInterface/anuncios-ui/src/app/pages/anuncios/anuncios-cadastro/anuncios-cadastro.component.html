@@ -1,0 +1,59 @@
+<div class="container" [hidden]="isLoading">
+    <br/>
+    <div class="form-row">
+        <h2 class="h2">{{pageTitle}}</h2>
+    </div>
+    <form id="resourceForm" [formGroup]="resourceForm" class="form-horizontal" (submit)="submitForm()">
+        <br />
+        <div class="form-row">
+            <div class="form-group col-md-12 col-xl-4">
+                <label for="marca"> Marca</label>
+                <select class="form-control" placeholder="" name="marca" #marca formControlName="marca" (change)="onChangeMarca()">
+                            <option *ngFor="let m of marcas" [ngValue]="m">
+                                {{ m.Name }}
+                            </option>
+                        </select>
+            </div>
+            <div class="form-group col-md-6 col-xl-4" [hidden]="!habilitaModelos">
+                <label for="modelo">Modelo</label>
+                <select class="form-control" placeholder="" name="modelo" formControlName="modelo" (change)="onChangeModelo()">
+                    <option *ngFor="let m of modelos" [ngValue]="m">
+                        {{ m.Name }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col-md-6 col-xl-4" [hidden]="!habilitaVersoes">
+                <label for="versao">Versão</label>
+                <select class="form-control" placeholder="" name="versao" formControlName="versao">
+                    <option *ngFor="let v of versoes" [ngValue]="v">
+                        {{ v.Name }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6 col-xl-2">
+                <label for="ano">Ano</label>
+                <input type="text" class="form-control" name="ano" formControlName="ano" mask="0000">
+            </div>
+            <div class="form-group col-md-6 col-xl-2">
+                <label for="quilometragem">Km</label>
+                <input type="text" class="form-control" name="quilometragem" formControlName="quilometragem" mask="099999">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12 col-xl-8">
+                <label for="observacao">Observação</label>
+                <textarea class="form-control" name="observacao" formControlName="observacao"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <button class="btn btn-warning" (click)="back()"><span>Voltar</span></button>
+            <div class="form-check mr-auto"></div>
+            <button class="btn btn-success"><span>Salvar</span></button>
+        </div>
+    </form>
+</div>
+<div class="container" [hidden]="!isLoading">
+    <app-loading></app-loading>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>Apresentação dos conceitos utilizados no desafio</h4>
+        </div>
+        <div class="col-sm-6">
+            <h4>Observações</h4>
+        </div>
+        <div class="col-sm-6">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    DDD (Domain Driven Design)
+                </li>
+                <li class="list-group-item">
+                    CQRS (Não abordando ele todo mas, deixando a aplicação preparada para a evolução de um cenário de separação da escrita/leitura)
+                </li>
+                <li class="list-group-item">
+                    Repository Pattern
+                </li>
+                <li class="list-group-item">
+                    TDD (Testes no projeto de Domain)
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-6">
+            <ul class="list-group">
+                <li class="list-group-item">Para correção do cadastro do anúncio, mudei o "max lenght" da versão de 45 para 60 (Para evitar futuras alterações). <br/> Nesse caso: Marca <b>Ford</b> / Modelo: <b>Fussion</b> / Versão: 1.8 16V EVO FLEX FREEDOM OPEN EDITION AUTOMÁTICO
+                    ( a versão contem <span class="red">48 caracteres</span>)
+                </li>
+                <li class="list-group-item">Script Executado: ALTER TABLE [dbo].[tb_AnuncioWebmotors] ALTER COLUMN [versao] VARCHAR(60) NOT NULL</li>
+                <li class="list-group-item">
+                    Criei uma validação para não repetir anúncios de mesma Marca/Modelo/Versão/Ano
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
