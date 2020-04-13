@@ -34,12 +34,12 @@ namespace Anuncios.Tests.Domain.Entities
         {
             var anuncio = new Anuncio("Ford", "Fussion", "1.5 LX 16V FLEX 4P MANUAL", 2019, 10000, "Observação");
             anuncio.Should().NotBeNull();
-            anuncio.Marca.Should().NotBeNullOrEmpty();
-            anuncio.Modelo.Should().NotBeNullOrEmpty();
-            anuncio.Versao.Should().NotBeNullOrEmpty();
-            anuncio.Ano.Should().BeGreaterThan(0);
-            anuncio.Quilometragem.Should().BeGreaterThan(0);
-            anuncio.Observacao.Should().NotBeNullOrEmpty();
+            anuncio.Marca.Should().Be("Ford");
+            anuncio.Modelo.Should().Be("Fussion");
+            anuncio.Versao.Should().Be("1.5 LX 16V FLEX 4P MANUAL");
+            anuncio.Ano.Should().Be(2019);
+            anuncio.Quilometragem.Should().Be(10000);
+            anuncio.Observacao.Should().Be("Observação");
         }
 
     }
